@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "tijo.scaria@gmail.com"
           git config --global user.name "Infrastructure Pipeline"
 
-       - name: Infra Deployment Started
+      - name: Infra Deployment Started
         run: |
           echo "Job started"
           echo "test 1"
