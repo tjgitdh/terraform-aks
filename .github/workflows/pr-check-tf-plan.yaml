@@ -27,7 +27,7 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Set Terraform workspace
-        run: echo -e "terraform {\n  backend \"remote\" {\n    organization = \"${ORGANIZATION}\"\n\n    workspaces {\n      name = \"${WORKSPACE}\"\n    }\n  }\n}" > workspace.tf
+        run: echo -e "terraform {\n  backend \"remote\" {\n    organization = \" ${{ vars.ORGANIZATION}}\"\n\n    workspaces {\n      name = \" ${{ vars.WORKSPACE}}\"\n    }\n  }\n}" > workspace.tf
 
       - name: Terraform Format
         run: terraform fmt -check
