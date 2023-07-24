@@ -8,9 +8,13 @@ on:
 jobs:
   terraformsentinalcheck:
     runs-on: ubuntu-latest
+    env:
+      GITHUBSERVICEACCOUNT_TOKEN: ${{ secrets.GITHUBSERVICEACCOUNT_TOKEN }}
+      GITHUBSERVICEACCOUNT_USER: ${{ secrets.GITHUBSERVICEACCOUNT_USER }}
     steps:
       - name: Git config
         run: |
+          git config --global --add url. "Git@github.com". Instead, "https://github.com/"
           git config --global user.email "tijo.scaria@gmail.com"
           git config --global user.name "Infrastructure Pipeline"
 
