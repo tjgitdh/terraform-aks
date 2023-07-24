@@ -9,20 +9,12 @@ jobs:
   terraformsentinalcheck:
     runs-on: ubuntu-latest
     env:
-      GITHUBSERVICEACCOUNT_TOKEN: ${{ secrets.GITHUBSERVICEACCOUNT_TOKEN }}
-      GITHUBSERVICEACCOUNT_USER: ${{ secrets.GITHUBSERVICEACCOUNT_USER }}
+      GITHUB_TOKEN: ${{ secrets.GITHUBACCESSTOKEN }}
     steps:
-      - name: Git config
-        run: |
-          git config --global --add url."https://github.com/".insteadOf "git@github.com:"
-          git config --global user.email "tijo.scaria@gmail.com"
-          git config --global user.name "Infrastructure Pipeline"
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: "${{ secrets.GITHUBACCESSTOKEN }}"
 
       - name: Infra Deployment Started
         run: |
